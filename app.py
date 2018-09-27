@@ -54,8 +54,14 @@ def receive_message():
                 elif 'located' in message['message'].get('text'):
                     response_sent_text = "Just 5 houses away toward dillibazaar from putalisadak chowk."
                     send_message(recipient_id, response_sent_text)
+                elif message['message'].get('text') in ["help","i need help",'can you help me?','I need some help','i need some help','I need some help.']:
+                    response_sent_text = "What help do you need?"
+                    send_message(recipient_id, response_sent_text)
+                elif message['message'].get('text') in ['info','Info']:
+                	response_sent_text = "We are a cafe located in Kathmandu, Nepal"
+                	send_message(recipient_id, response_sent_text)
                 else:
-                    return "No response"
+                    send_message(recipient_id, "Please provide your contact no. and we will call you asap.")
     return "Message Processed"
 
 @app.route("/privacy-policy/")
