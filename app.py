@@ -60,6 +60,9 @@ def receive_message():
                 elif message['message'].get('text') in ['info','Info']:
                 	response_sent_text = "We are a cafe located in Kathmandu, Nepal"
                 	send_message(recipient_id, response_sent_text)
+                elif message['message'].get('text') in ['ok','Ok','OK','Okay','okay','Okey','okey']:
+                	response_sent_text = "Okay"
+                	send_message(recipient_id, response_sent_text)
                 else:
                     send_message(recipient_id, "Please provide your contact no. and we will call you asap.")
     return "Message Processed"
