@@ -69,6 +69,9 @@ def receive_message():
                 elif 'Interested' in message['message'].get('text'):
                     response_sent_text = "Interested in which service?"
                     send_message(recipient_id, response_sent_text)
+                elif message['message'].get('text').isnumeric():
+                    response_sent_text = "Thank you! Our team will contact you as soon as possible."
+                    send_message(recipient_id, response_sent_text)
                 else:
                     send_message(recipient_id,'')
     return "Message Processed"
