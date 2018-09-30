@@ -39,7 +39,7 @@ def receive_message():
                 elif message['message'].get('text') in ['Thank you','thank you','tq','tqu','thanks','Thanks','thanku']:
                     response_sent_text  = "You are welcome :)"
                     send_message(recipient_id, response_sent_text)
-                elif message['message'].get('text') in ['Interested - IELTS','IELTS','ielts','Ielts','Ilets']:
+                elif message['message'].get('text') in ['Interested - IELTS','IELTS','ielts','Ielts','Ilets','Interested-IELTS']:
                     response_sent_text = "Which time do you prefer for the class?"
                     send_message(recipient_id, response_sent_text)
                 elif message['message'].get('text') in ["Study in Australia","study in australia",'australia','Australia']:
@@ -58,11 +58,17 @@ def receive_message():
                     response_sent_text = "What help do you need?"
                     send_message(recipient_id, response_sent_text)
                 elif message['message'].get('text') in ['info','Info']:
-                	response_sent_text = "We are a cafe located in Kathmandu, Nepal"
+                	response_sent_text = "We are an educational consultancy located in Kathmandu, Nepal"
                 	send_message(recipient_id, response_sent_text)
                 elif message['message'].get('text') in ['ok','Ok','OK','Okay','okay','Okey','okey']:
                 	response_sent_text = "Okay"
                 	send_message(recipient_id, response_sent_text)
+                elif 'interested' in message['message'].get('text'):
+                    response_sent_text = "Interested in which service?"
+                    send_message(recipient_id, response_sent_text)
+                elif 'Interested' in message['message'].get('text'):
+                    response_sent_text = "Interested in which service?"
+                    send_message(recipient_id, response_sent_text)
                 else:
                     send_message(recipient_id,'')
     return "Message Processed"
