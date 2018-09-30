@@ -64,7 +64,7 @@ def receive_message():
                 	response_sent_text = "Okay"
                 	send_message(recipient_id, response_sent_text)
                 else:
-                    send_message(recipient_id, "Please provide your contact no. and we will call you asap.")
+                    send_message(recipient_id,'')
     return "Message Processed"
 
 @app.route("/privacy-policy/")
