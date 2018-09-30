@@ -73,7 +73,9 @@ def receive_message():
                     response_sent_text = "Thank you! Our team will contact you as soon as possible."
                     send_message(recipient_id, response_sent_text)
                 else:
-                    send_message(recipient_id,'')
+                    for text in message['message'].get('text').split():
+                        if text.isnumeric() and len(text) == 10:
+                            send_message(recipient_id, "Thank you. Our concerned department will contact you as soon as possible.")
     return "Message Processed"
 
 @app.route("/privacy-policy/")
