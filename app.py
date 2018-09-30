@@ -76,6 +76,8 @@ def receive_message():
                     for text in message['message'].get('text').split():
                         if text.isnumeric() and len(text) == 10:
                             send_message(recipient_id, "Thank you. Our concerned department will contact you as soon as possible.")
+                        elif text.isnumeric() and 8 <= len(text) <=12 and text.startswith('98'):
+                            send_message(recipient_id, "I think you provided the wrong number. Would you please check it again?")
     return "Message Processed"
 
 @app.route("/privacy-policy/")
